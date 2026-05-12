@@ -1,6 +1,5 @@
 import tkinter as tk
 
-# Function
 def calculate(operation):
     try:
         n1 = float(entry1.get())
@@ -21,12 +20,19 @@ def calculate(operation):
                 return
             result = n1 / n2
 
+        elif operation == "^":
+            result = n1 ** n2
+
         output.config(text=f"Result: {result}")
 
     except:
         output.config(text="Invalid input")
 
-# Window
+def clear():
+    entry1.delete(0, tk.END)
+    entry2.delete(0, tk.END)
+    output.config(text="Result will appear here")
+
 window = tk.Tk()
 window.title("GUI Calculator")
 window.geometry("300x250")
